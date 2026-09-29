@@ -1,0 +1,4 @@
+google-api-python-client>=2.100
+pyyaml>=6.0
+anthropic>=1.9
+isodate>=0.6

@@ -1,0 +1,32 @@
+region: JP
+language: ja
+
+# 自分が狙うジャンルのキーワード（1つにつき検索1回 = 100ユニット消費）
+keywords:
+  - "副業 始め方"
+  - "節約 術"
+  - "AI 使い方"
+
+search:
+  days_back: 7          # 直近何日に公開された動画を対象にするか
+  max_results: 25       # キーワードごとの取得件数（最大50）
+
+trending:
+  max_results: 50       # 急上昇動画の取得件数（最大200）
+
+thresholds:
+  outlier_ratio: 3.0       # 再生数 ÷ 登録者数 がこれ以上なら「企画で伸びた動画」
+  outlier_min_views: 10000 # 登録者が極端に少ないチャンネルのノイズを除くための最低再生数
+  shorts_max_seconds: 180  # これ以下の長さをショートとみなす
+
+report:
+  top_n: 10             # レポートに載せる上位件数
+  use_ai_summary: true  # Claude APIで要約するか（ANTHROPIC_API_KEY が未設定なら自動でスキップ）
+
+ai:
+  model: claude-sonnet-5-5
+
+storage:
+  db_path: data/trends.db
+  keep_days: 90         # これより古いスナップショットは削除
+  reports_dir: reports
